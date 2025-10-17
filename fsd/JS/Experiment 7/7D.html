@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Object Example - Siva Reddy</title>
+    <script>
+        function mathDemo() {
+            // Using Math properties
+            let piValue = Math.PI;
+            let eValue = Math.E;
+
+            // Using Math methods
+            let number = 7.8;
+            let sqrtVal = Math.sqrt(64);
+            let powVal = Math.pow(5, 3);
+            let roundVal = Math.round(number);
+            let floorVal = Math.floor(number);
+            let ceilVal = Math.ceil(number);
+            let randomVal = Math.random(); // between 0 and 1
+
+            // Display results
+            let infoDiv = document.createElement("div");
+            infoDiv.innerHTML = "<h3>Math Object Properties & Methods Demo</h3>" +
+                                "<p>Math.PI: " + piValue + "</p>" +
+                                "<p>Math.E: " + eValue + "</p>" +
+                                "<p>Square root of 64: " + sqrtVal + "</p>" +
+                                "<p>5 raised to power 3: " + powVal + "</p>" +
+                                "<p>Round 7.8: " + roundVal + "</p>" +
+                                "<p>Floor 7.8: " + floorVal + "</p>" +
+                                "<p>Ceil 7.8: " + ceilVal + "</p>" +
+                                "<p>Random value: " + randomVal.toFixed(2) + "</p>";
+            infoDiv.style.border = "2px solid purple";
+            infoDiv.style.padding = "10px";
+            infoDiv.style.marginTop = "20px";
+
+            document.body.appendChild(infoDiv);
+        }
+    </script>
+</head>
+<body onload="mathDemo()">
+
+<h2>Math Object Properties and Methods</h2>
+
+</body>
+</html>

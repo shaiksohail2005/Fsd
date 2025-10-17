@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Output Methods</title>
+    <script>
+        // Function to display output using alert
+        function showAlert() {
+            alert("This is displayed using alert()");
+        }
+
+        // Function to display output using console.log
+        function showConsole() {
+            console.log("This is displayed using console.log()");
+        }
+
+        // Function to display output using document.write
+        function showDocumentWrite() {
+            document.write("This is displayed using document.write()");
+        }
+
+        // Function to display output in an HTML element
+        function showInElement() {
+            document.getElementById("outputDiv").innerHTML = "This is displayed using innerHTML in a div";
+        }
+    </script>
+</head>
+<body>
+
+<h2>JavaScript Output Methods - Siva Reddy</h2>
+
+<button onclick="showAlert()">Alert Output</button><br><br>
+<button onclick="showConsole()">Console Output</button><br><br>
+<button onclick="showDocumentWrite()">Document Write Output</button><br><br>
+<button onclick="showInElement()">Output in HTML Element</button><br><br>
+
+<div id="outputDiv" style="color: blue; font-weight: bold;"></div>
+
+</body>
+</html>

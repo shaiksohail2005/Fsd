@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Example - Siva Reddy</title>
+    <script>
+        function showDocumentInfo() {
+            // Using document properties
+            let title = document.title;
+            let url = document.URL;
+            let domain = document.domain;
+            let lastModified = document.lastModified;
+
+            // Using document methods
+            let para = document.createElement("p");
+            para.innerHTML = "Document Title: " + title + "<br>" +
+                             "Document URL: " + url + "<br>" +
+                             "Domain Name: " + domain + "<br>" +
+                             "Last Modified: " + lastModified;
+
+            document.body.appendChild(para);
+
+            // Changing document background using document property
+            document.body.style.backgroundColor = "#f0f8ff";
+        }
+    </script>
+</head>
+<body onload="showDocumentInfo()">
+
+<h2>Document Object Properties and Methods Demo</h2>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Defined Object Example - Siva Reddy</title>
+    <script>
+        // Constructor function
+        function Student(name, age, grade) {
+            // Properties
+            this.name = name;
+            this.age = age;
+            this.grade = grade;
+
+            // Method
+            this.getDetails = function() {
+                return "Name: " + this.name + ", Age: " + this.age + ", Grade: " + this.grade;
+            };
+
+            // Accessor (getter)
+            this.getName = function() {
+                return this.name;
+            };
+
+            // Accessor (setter)
+            this.setGrade = function(newGrade) {
+                this.grade = newGrade;
+            };
+        }
+
+        function displayStudent() {
+            // Create a new student object
+            let student1 = new Student("Siva Reddy", 21, "A");
+
+            // Display initial details
+            let infoDiv = document.createElement("div");
+            infoDiv.innerHTML = "<h3>User-Defined Object Demo</h3>" +
+                                "<p>Initial Details: " + student1.getDetails() + "</p>";
+
+            // Update grade using setter
+            student1.setGrade("A+");
+            infoDiv.innerHTML += "<p>Updated Grade: " + student1.getDetails() + "</p>";
+
+            // Access name using getter
+            infoDiv.innerHTML += "<p>Student Name (getter): " + student1.getName() + "</p>";
+
+            infoDiv.style.border = "2px solid navy";
+            infoDiv.style.padding = "10px";
+            infoDiv.style.marginTop = "20px";
+
+            document.body.appendChild(infoDiv);
+        }
+    </script>
+</head>
+<body onload="displayStudent()">
+
+<h2>User-Defined Object with Properties, Methods, Accessors, Constructor</h2>
+
+</body>
+</html>

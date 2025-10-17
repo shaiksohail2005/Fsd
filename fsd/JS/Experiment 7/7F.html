@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Object Example - Siva Reddy</title>
+    <script>
+        function regexDemo() {
+            // Sample text
+            let text = "Siva Reddy's email is siva.reddy@example.com and phone is 9876543210.";
+
+            // Using regex patterns
+            let emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
+            let phonePattern = /\b\d{10}\b/g;
+
+            // Using regex methods
+            let emailFound = text.match(emailPattern);      // match method
+            let phoneFound = text.match(phonePattern);      // match method
+            let replacedText = text.replace(emailPattern, "hidden@example.com"); // replace method
+            let testEmail = emailPattern.test(text);        // test method
+
+            // Display results
+            let infoDiv = document.createElement("div");
+            infoDiv.innerHTML = "<h3>Regex Object Properties & Methods Demo</h3>" +
+                                "<p>Original Text: " + text + "</p>" +
+                                "<p>Found Email: " + emailFound + "</p>" +
+                                "<p>Found Phone(s): " + phoneFound + "</p>" +
+                                "<p>Replaced Email: " + replacedText + "</p>" +
+                                "<p>Test Email Exists: " + testEmail + "</p>";
+            infoDiv.style.border = "2px solid teal";
+            infoDiv.style.padding = "10px";
+            infoDiv.style.marginTop = "20px";
+
+            document.body.appendChild(infoDiv);
+        }
+    </script>
+</head>
+<body onload="regexDemo()">
+
+<h2>Regex Object Properties and Methods</h2>
+
+</body>
+</html>

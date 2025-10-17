@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Object Example - Siva Reddy</title>
+    <script>
+        function showWindowInfo() {
+            // Using window properties
+            let innerWidth = window.innerWidth;
+            let innerHeight = window.innerHeight;
+            let outerWidth = window.outerWidth;
+            let outerHeight = window.outerHeight;
+            let locationHref = window.location.href;
+
+            // Using window methods
+            alert("Window Width: " + innerWidth + "px\n" +
+                  "Window Height: " + innerHeight + "px");
+
+            let infoDiv = document.createElement("div");
+            infoDiv.innerHTML = "<p>Outer Width: " + outerWidth + "</p>" +
+                                "<p>Outer Height: " + outerHeight + "</p>" +
+                                "<p>Current URL: " + locationHref + "</p>";
+            infoDiv.style.border = "2px solid blue";
+            infoDiv.style.padding = "10px";
+            infoDiv.style.marginTop = "20px";
+
+            document.body.appendChild(infoDiv);
+        }
+    </script>
+</head>
+<body onload="showWindowInfo()">
+
+<h2>Window Object Properties and Methods Demo</h2>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Object Example - Siva Reddy</title>
+    <script>
+        function stringDemo() {
+            // Creating a string
+            let text = "Hello Siva Reddy, welcome to JavaScript!";
+
+            // Using string properties
+            let length = text.length;
+
+            // Using string methods
+            let upper = text.toUpperCase();
+            let lower = text.toLowerCase();
+            let sliceText = text.slice(6, 16);
+            let indexOfSiva = text.indexOf("Siva");
+            let replacedText = text.replace("JavaScript", "Web Development");
+            let splitText = text.split(" ");
+
+            // Display results
+            let infoDiv = document.createElement("div");
+            infoDiv.innerHTML = "<h3>String Object Properties & Methods Demo</h3>" +
+                                "<p>Original Text: " + text + "</p>" +
+                                "<p>Length: " + length + "</p>" +
+                                "<p>Uppercase: " + upper + "</p>" +
+                                "<p>Lowercase: " + lower + "</p>" +
+                                "<p>Slice (6-16): " + sliceText + "</p>" +
+                                "<p>Index of 'Siva': " + indexOfSiva + "</p>" +
+                                "<p>Replaced Text: " + replacedText + "</p>" +
+                                "<p>Split Text: " + splitText.join(", ") + "</p>";
+            infoDiv.style.border = "2px solid orange";
+            infoDiv.style.padding = "10px";
+            infoDiv.style.marginTop = "20px";
+
+            document.body.appendChild(infoDiv);
+        }
+    </script>
+</head>
+<body onload="stringDemo()">
+
+<h2>String Object Properties and Methods</h2>
+
+</body>
+</html>
