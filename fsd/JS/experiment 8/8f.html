@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Denomination Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 40px;
+      background: #f5f5f5;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 25px;
+      display: inline-block;
+      text-align: left;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bank Amount Denomination</h1>
+
+  <input type="number" id="amount" placeholder="Enter deposited amount">
+  <button onclick="calculateDenomination()">Show Denominations</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function calculateDenomination() {
+      let amount = parseInt(document.getElementById("amount").value);
+      let temp = amount;
+      let result = "";
+
+      let notes = [100, 50, 20, 10, 5, 2, 1];
+
+      for (let i = 0; i < notes.length; i++) {
+        let count = Math.floor(temp / notes[i]);
+        if (count > 0) {
+          result += count + " × " + notes[i] + "'s<br>";
+          temp = temp % notes[i];
+        }
+      }
+
+      document.getElementById("result").innerHTML = 
+        "<b>Amount:</b> ₹" + amount + "<br><br>" + result;
+    }
+  </script>
+</body>
+</html>

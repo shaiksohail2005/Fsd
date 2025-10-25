@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Print Object Data using Loops</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    .output {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Display Object Data using Different Loops</h1>
+
+  <div>
+    <h2>Using for-in loop:</h2>
+    <div class="output" id="forIn"></div>
+  </div>
+
+  <div>
+    <h2>Using forEach loop:</h2>
+    <div class="output" id="forEach"></div>
+  </div>
+
+  <div>
+    <h2>Using for-of loop:</h2>
+    <div class="output" id="forOf"></div>
+  </div>
+
+  <script>
+    // Define an object
+    const student = {
+      name: "Siva",
+      age: 21,
+      course: "B.Tech",
+      college: "ABC College"
+    };
+
+    // Using for-in loop (for objects)
+    let forInOutput = "";
+    for (let key in student) {
+      forInOutput += key + ": " + student[key] + "<br>";
+    }
+    document.getElementById("forIn").innerHTML = forInOutput;
+
+    // Convert object to array of entries for forEach and for-of

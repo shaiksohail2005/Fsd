@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 40px;
+      background: #f5f5f5;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 25px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      display: inline-block;
+      text-align: left;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number Operations</h1>
+  <input type="number" id="num" placeholder="Enter a number">
+  <button onclick="displayResults()">Show Results</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    // Function to find factorial
+    function factorial(n) {
+      if (n === 0 || n === 1) return 1;
+      let fact = 1;
+      for (let i = 2; i <= n; i++) {
+        fact *= i;
+      }
+      return fact;
+    }
+
+    // Function to generate Fibonacci series
+    function fibonacci(n) {
+      let series = [0, 1];
+      for (let i = 2; i < n; i++) {
+        series[i] = series[i - 1] + series[i - 2];
+      }
+      return series.slice(0, n).join(", ");
+    }
+
+    // Function to get prime numbers up to n
+    function primesUpTo(n) {
+      let primes = [];
+      for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) primes.push(i);
+      }
+      return primes.join(", ");
+    }
+
+    // Function to check palindrome
+    function isPalindrome(n) {
+      let str = n.toString();
+      let reversed = str.split('').reverse().join('');
+      return str === reversed;
+    }
+
+    // Main function to display all results
+    function displayResults() {
+      let num = parseInt(document.getElementById("num").value);
+      if (isNaN(num) || num < 0) {
+        document.getElementById("result").innerHTML = "Please enter a valid positive number.";
+        return;
+      }
+
+      let output = `<h2>Results for ${num}</h2>`;
+      output += `<b>Factorial:</b> ${factorial(num)}<br><br>`;
+      output += `<b>Fibonacci Series:</b> ${fibonacci(num)}<br><br>`;
+      output += `<b>Prime Numbers up to ${num}:</b> ${primesUpTo(num)}<br><br>`;
+      output += `<b>Palindrome Check:</b> ${isPalindrome(num) ? "Yes, it is a Palindrome" : "No, not a Palindrome"}`;
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>

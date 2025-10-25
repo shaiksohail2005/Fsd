@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Print 1 to 10 using Loops</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    .output {
+      background: #f2f2f2;
+      padding: 15px;
+      margin: 10px auto;
+      width: 250px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Print Numbers 1 to 10 using Different Loops</h1>
+
+  <div>
+    <h2>Using for loop:</h2>
+    <div class="output" id="forLoop"></div>
+  </div>
+
+  <div>
+    <h2>Using while loop:</h2>
+    <div class="output" id="whileLoop"></div>
+  </div>
+
+  <div>
+    <h2>Using do-while loop:</h2>
+    <div class="output" id="doWhileLoop"></div>
+  </div>
+
+  <script>
+    // Using for loop
+    let forOutput = "";
+    for (let i = 1; i <= 10; i++) {
+      forOutput += i + " ";
+    }
+    document.getElementById("forLoop").innerText = forOutput;
+
+    // Using while loop
+    let j = 1;
+    let whileOutput = "";
+    while (j <= 10) {
+      whileOutput += j + " ";
+      j++;
+    }
+    document.getElementById("whileLoop").innerText = whileOutput;
+
+    // Using do-while loop
+    let k = 1;
+    let doWhileOutput = "";
+    do {
+      doWhileOutput += k + " ";
+      k++;
+    } while (k <= 10);
+    document.getElementById("doWhileLoop").innerText = doWhileOutput;
+  </script>
+</body>
+</html>

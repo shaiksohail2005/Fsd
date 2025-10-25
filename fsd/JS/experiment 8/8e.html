@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Armstrong Number Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+    input {
+      padding: 8px;
+      width: 150px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Armstrong Number Checker</h1>
+
+  <input type="number" id="num" placeholder="Enter a number">
+  <button onclick="checkArmstrong()">Check</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function checkArmstrong() {
+      let num = parseInt(document.getElementById("num").value);
+      let temp = num;
+      let sum = 0;
+
+      // Calculate sum of cubes of digits
+      while (temp > 0) {
+        let digit = temp % 10;
+        sum += digit * digit * digit;
+        temp = Math.floor(temp / 10);
+      }
+
+      // Display result
+      if (sum === num) {
+        document.getElementById("result").innerText = num + " is an ARMSTRONG NUMBER";
+      } else {
+        document.getElementById("result").innerText = num + " is NOT an Armstrong number";
+      }
+    }
+  </script>
+</body>
+</html>
